@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,44 +11,46 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLightProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLightProject" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyv-6N-3SR" userLabel="red light">
-                                <rect key="frame" x="130" y="35" width="60" height="60"/>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyv-6N-3SR" userLabel="red light">
+                                <rect key="frame" x="130" y="82" width="168" height="168"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iyv-6N-3SR" secondAttribute="height" multiplier="1:1" id="xq8-aS-NEx"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xq4-8R-Hbb" userLabel="yellow light">
-                                <rect key="frame" x="130" y="130" width="60" height="60"/>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xq4-8R-Hbb" userLabel="yellow light">
+                                <rect key="frame" x="130" y="285" width="168" height="168"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xq4-8R-Hbb" secondAttribute="height" multiplier="1:1" id="yH0-5l-TcY"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V08-x9-85l" userLabel="green light">
-                                <rect key="frame" x="130" y="225" width="60" height="60"/>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V08-x9-85l" userLabel="green light">
+                                <rect key="frame" x="130" y="488" width="168" height="168"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="V08-x9-85l" secondAttribute="height" multiplier="1:1" id="HIW-vC-Ua3"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wln-hY-3ML" userLabel="Button which is controle traffic lights">
-                                <rect key="frame" x="60" y="379" width="200" height="60"/>
+                                <rect key="frame" x="114" y="750" width="200" height="60"/>
                                 <color key="backgroundColor" systemColor="systemMintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Tao-CE-EFn"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="bYr-18-KLx"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="32"/>
                                 <color key="tintColor" red="1" green="0.12865177189999999" blue="0.1504391323" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Start">
-                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="32"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="L9z-hK-smy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -67,6 +69,12 @@
                             <constraint firstItem="V08-x9-85l" firstAttribute="top" secondItem="xq4-8R-Hbb" secondAttribute="bottom" constant="35" id="xeD-gD-6Ra"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenView" destination="V08-x9-85l" id="RRI-ke-XzQ"/>
+                        <outlet property="redView" destination="iyv-6N-3SR" id="44i-Ok-7gc"/>
+                        <outlet property="startButton" destination="wln-hY-3ML" id="uEc-8U-pNS"/>
+                        <outlet property="yellowView" destination="xq4-8R-Hbb" id="owt-pu-2eT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
