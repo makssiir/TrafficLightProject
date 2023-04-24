@@ -21,8 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     private var coloreLight = Color.red
-    
-    private var cornerRadius: CGFloat = 85
+
+    private var cornerRadius: CGFloat = 70
     
     override func viewDidLoad() {
         super.viewDidLoad()
