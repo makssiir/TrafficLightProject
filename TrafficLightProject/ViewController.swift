@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         greenView.layer.cornerRadius = cornerRadius
         startButton.layer.cornerRadius = 15
     }
+    //make circles from lights
     
     @IBAction func startButtonTapped() {
         startButton.setTitle("Next", for: .normal)
@@ -55,12 +56,6 @@ class ViewController: UIViewController {
     }
     
 }
-
-//override func viewWillLayoutSubviews() {
-//    redView.layer.cornerRadius = redView.frame.width / 2
-//    yellowView.layer.cornerRadius = yellowView.frame.width / 2
-//    greenView.layer.cornerRadius = greenView.frame.width / 2
-//}
 
 
 
